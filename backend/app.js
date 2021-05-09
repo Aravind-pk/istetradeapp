@@ -3,8 +3,11 @@ const bodyParser = require("body-parser")
 const cors = require("cors")
 const state = require("./routes/routes")
 const users = require("./routes/userRoutes.js")
+const path = require('path')
 
 const app = express()
+const buildPath = path.join(__dirname, '..','build');
+app.use(express.static(buildPath))
 
 // Body Parser Middleware
 app.use(bodyParser.json())
