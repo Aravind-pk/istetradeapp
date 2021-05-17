@@ -8,7 +8,7 @@ import { getUpdate, RoundOf, getMarketStatus } from "../utils/utils";
 import SellAction from "../actions/Sell";
 import BuyAction from "../actions/Buy";
 
-import "../styles/main.css"
+// import "../styles/main.css"
 import axios from "axios";
 import { setInterval } from "timers";
 

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { RoundOf } from "../utils/utils"
-import "../styles/main.css"
+// import "../styles/main.css"
 
 interface PassedProps {
     money: {
