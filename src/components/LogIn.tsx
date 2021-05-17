@@ -44,7 +44,7 @@ class LogIn extends React.Component<any, State> {
 
     render() {
         return(
-            <div className="container" id="login">
+            <div className="container bg-gray-800" id="login">
 
                 <div id="login_signup">
                     <h4 className="title is-uppercase has-text-primary active">Log In</h4>
