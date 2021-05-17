@@ -1,11 +1,18 @@
-import React from "react"
+
 import { NavLink } from "react-router-dom"
 
 import LogOut from "../components/LogOut"
 import { getMarketStatus, setUserName } from "../utils/utils"
 import LiveClock from "../components/clock";
+import React, { useState } from "react";
+import { Transition } from "@headlessui/react";
 
-
+const navigation = [
+    { name: 'Dashboard', href: '#', current: true },
+    { name: 'Team', href: '#', current: false },
+    { name: 'Projects', href: '#', current: false },
+    { name: 'Calendar', href: '#', current: false },
+  ]
 export default class Header extends React.Component {
 
     componentDidMount() {
@@ -19,7 +26,10 @@ export default class Header extends React.Component {
     render() {
         return (
             <div>
-                <nav className="navbar" role="navigation" aria-label="main navigation">
+
+
+
+                {/* <nav className="navbar" role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
                         <span className="navbar-item"> 
                         <img src={require("../assets/favicon.png")} height="24" width="24"/>
@@ -70,7 +80,12 @@ export default class Header extends React.Component {
                             </div>
                         </div>
                     </div>
-                </nav>
+                </nav> */}
+
+
+
+
+
 
                 {/* <a id="github" href="https://github.com/Jigar3/Wall-Street" target="_blank"> <img src={require("../assets/github-logo.png")} alt=""/> View Me on Github</a> */}
             </div>
