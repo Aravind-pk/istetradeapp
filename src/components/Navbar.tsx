@@ -183,7 +183,7 @@ const NavBar = () => {
                 href="#"
                 className="text-base font-medium text-gray-500 hover:text-gray-900"
               >
-                Pricing
+                hii
                 </a>
               <a
                 href="#"
@@ -317,31 +317,7 @@ const NavBar = () => {
                       />
                     </svg>
                     <span className="ml-3 text-base font-medium text-gray-900">
-                      Engagement
-                      </span>
-                  </a>
-                  <a
-                    href="#"
-                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-                  >
-                    {/* Heroicon name: outline/shield-check */}
-                    <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
-                    </svg>
-                    <span className="ml-3 text-base font-medium text-gray-900">
-                      Security
+                      View
                       </span>
                   </a>
                   <a
@@ -365,7 +341,7 @@ const NavBar = () => {
                       />
                     </svg>
                     <span className="ml-3 text-base font-medium text-gray-900">
-                      Integrations
+                      Buy
                       </span>
                   </a>
                   <a
@@ -389,7 +365,7 @@ const NavBar = () => {
                       />
                     </svg>
                     <span className="ml-3 text-base font-medium text-gray-900">
-                      Automations
+                      Learn
                       </span>
                   </a>
                 </nav>
@@ -401,27 +377,27 @@ const NavBar = () => {
                   href="#"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
-                  Pricing
+                  learn
                   </a>
                 <a
                   href="#"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
-                  Docs
+                  Stock symbols
                   </a>
                 <a
                   href="#"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
-                  Enterprise
+                  Stock pdf
                   </a>
-                <a
+                 <a
                   href="#"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
-                  Blog
+                  NASDAQ
                   </a>
-                <a
+                {/*<a
                   href="#"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
@@ -444,7 +420,7 @@ const NavBar = () => {
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
                   Events
-                  </a>
+                  </a> */}
               </div>
               <div>
                 <a
@@ -454,10 +430,8 @@ const NavBar = () => {
                   Sign up
                   </a>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Existing customer?
-                    <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                    Sign in
-                    </a>
+                  A bigger screen provides improved perfomance.
+
                 </p>
               </div>
             </div>
