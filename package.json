@@ -29,6 +29,7 @@
     "react-thunk": "^1.0.0",
     "recharts": "^1.4.2",
     "redux": "^4.0.1",
+    "tailwind-navbar-react": "^1.0.3",
     "typescript": "3.2.2",
     "uuid": "^3.3.2"
   },
