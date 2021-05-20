@@ -1,5 +1,17 @@
 import React from "react";
 
+
+
+import { NavLink} from "react-router-dom"
+
+import LogOut from "../components/LogOut"
+import LogOutM from "../components/LogOutM"
+import { getMarketStatus, setUserName } from "../utils/utils"
+import LiveClock from "../components/clock";
+import Navbar from "../components/Navbar";
+
+
+
 const NavBar = () => {
   const [open, setOpen] = React.useState(false);
   const [flyer, setFlyer] = React.useState(false);
@@ -47,6 +59,35 @@ const NavBar = () => {
               </button>
             </div>
             <nav className="hidden md:flex space-x-10">
+
+              <NavLink
+                to = "/"
+                className="text-base font-medium text-gray-500 hover:text-gray-900"
+              >
+                My Portfolio
+              </NavLink>
+
+              <NavLink
+                to = "/view"
+                className="text-base font-medium text-gray-500 hover:text-gray-900"
+              >
+                View
+              </NavLink>
+
+              <NavLink
+                to = "/view"
+                className="text-base font-medium text-gray-500 hover:text-gray-900"
+              >
+                Buy
+              </NavLink>
+
+                <a
+                href="https://zerodha.com/varsity/"
+                className="text-base font-medium text-gray-500 hover:text-gray-900"
+              >
+                 Learn Stock
+                </a>
+
               <div className="relative">
                 {/* Item active: "text-gray-900", Item inactive: "text-gray-500" */}
                 <button
@@ -82,14 +123,14 @@ const NavBar = () => {
                 </button>
                 {/*
               'Solutions' flyout menu, show/hide based on flyout menu state.
-  
+              
               Entering: "transition ease-out duration-200"
-                From: "opacity-0 translate-y-1"
-                To: "opacity-100 translate-y-0"
+              From: "opacity-0 translate-y-1"
+              To: "opacity-100 translate-y-0"
               Leaving: "transition ease-in duration-150"
                 From: "opacity-100 translate-y-0"
                 To: "opacity-0 translate-y-1"
-            */}
+              */}
 
                 <div
                   onMouseLeave={() => setFlyer(false)}
@@ -115,66 +156,8 @@ const NavBar = () => {
                             </p>
                         </div>
                       </div>
-
-
-                      
+                
                     </div>
-                    {/* <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
-                      <div className="flow-root">
-                        <a
-                          href="#"
-                          className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
-                        >
-                    
-                          <svg
-                            className="flex-shrink-0 h-6 w-6 text-gray-400"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            aria-hidden="true"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                            />
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                            />
-                          </svg>
-                          <span className="ml-3">Watch Demo</span>
-                        </a>
-                      </div>
-                      <div className="flow-root">
-                        <a
-                          href="#"
-                          className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
-                        >
-                          
-                          <svg
-                            className="flex-shrink-0 h-6 w-6 text-gray-400"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            aria-hidden="true"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                            />
-                          </svg>
-                          <span className="ml-3">Contact Sales</span>
-                        </a>
-                      </div>
-                    </div> */}
                   </div>
                 </div>
               </div>
@@ -183,36 +166,26 @@ const NavBar = () => {
                 href="#"
                 className="text-base font-medium text-gray-500 hover:text-gray-900"
               >
-                hii
-                </a>
-              <a
-                href="#"
-                className="text-base font-medium text-gray-500 hover:text-gray-900"
-              >
-                Docs
-                </a>
+                                    {sessionStorage.getItem("status") === "CLOSE" 
+                                    ? <span id="close"  className ="text-red-700">CLOSED</span> 
+                                    : <span id="open" className ="text-green-700">LIVE</span> }
+              </a>
+              
+              
+              <LiveClock />
               </nav>
             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            
 
               <a
                 href="#"
                 className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
               >
-                Sign in
-              </a>              
-
-              <a
-                href="#"
-                className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
-              >
-                Sign in
+                {sessionStorage.getItem("name")}
               </a>
-              <a
-                href="#"
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 hover:text-white"
-              >
-                Log Out
-              </a>
+              
+                <LogOut/>
+              
             </div>
           </div>
         </div>
@@ -237,12 +210,15 @@ const NavBar = () => {
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
-                <div>
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                    alt="Workflow"
-                  />
+                <div className="flex flex-row align-text-middle">
+                    <span className="ml-3 text-base font-medium text-blue-900">
+                                    {sessionStorage.getItem("status") === "CLOSE" 
+                                    ? <span id="close"  className ="text-red-700">CLOSED</span> 
+                                    : <span id="open" className ="text-green-700">LIVE</span> }
+                    </span>
+                    <span className="ml-3 text-base font-medium text-blue-900">
+                    <LiveClock/>
+                    </span>
                 </div>
                 <div className="-mr-2">
                   <button
@@ -276,6 +252,15 @@ const NavBar = () => {
                     href="#"
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
+                    <span className="ml-3 text-base font-medium text-blue-900">
+                    {sessionStorage.getItem("name")}
+                      </span>
+                  </a>
+
+                  <NavLink
+                    to="/"
+                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  >
                     {/* Heroicon name: outline/chart-bar */}
                     <svg
                       className="flex-shrink-0 h-6 w-6 text-indigo-600"
@@ -295,9 +280,10 @@ const NavBar = () => {
                     <span className="ml-3 text-base font-medium text-gray-900">
                       My Portfolio
                       </span>
-                  </a>
-                  <a
-                    href="#"
+                  </NavLink>
+
+                  <NavLink
+                    to ="/view"
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     {/* Heroicon name: outline/cursor-click */}
@@ -319,9 +305,9 @@ const NavBar = () => {
                     <span className="ml-3 text-base font-medium text-gray-900">
                       View
                       </span>
-                  </a>
-                  <a
-                    href="#"
+                  </NavLink>
+                  <NavLink
+                    to = "/buy"
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     {/* Heroicon name: outline/view-grid */}
@@ -343,7 +329,7 @@ const NavBar = () => {
                     <span className="ml-3 text-base font-medium text-gray-900">
                       Buy
                       </span>
-                  </a>
+                  </NavLink>
                   <a
                     href="#"
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
@@ -422,17 +408,15 @@ const NavBar = () => {
                   Events
                   </a> */}
               </div>
-              <div>
-                <a
+              <div className="flex-wrap content-start">
+                {/* <a
                   href="#"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   Sign up
-                  </a>
-                <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  A bigger screen provides improved perfomance.
+                  </a> */}
 
-                </p>
+                  <LogOutM/>
               </div>
             </div>
           </div>
