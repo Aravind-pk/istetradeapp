@@ -71,7 +71,7 @@ class Home extends React.Component <PassedProps> {
 
 	render() {
 		return (
-			<div className = "">
+			<div className = "bg-primary">
 				<Asset />
 
 				<section className="hero is-primary is-bold">
